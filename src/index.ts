@@ -1,8 +1,8 @@
 export default {
   async fetch(request, env) {
-    const inputs = {
-      prompt: "cyberpunk cat",
-    };
+
+    const body = await request.json()
+    const inputs = body.inputs
 
     const response = await env.AI.run(
       "@cf/stabilityai/stable-diffusion-xl-base-1.0",
